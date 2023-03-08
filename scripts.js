@@ -63,6 +63,7 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+//initiate the game
 function game(){
     
     playerWinCount = 0;
