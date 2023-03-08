@@ -9,7 +9,7 @@ function getComputerChoice() {
 
 //function to prompt and return the player choice
 function getPlayerChoice(){
-    return "rock";
+    return prompt("Please type rock, paper, or scissors");
 }
 
 //function to compare and declare the winner between the user and computer
