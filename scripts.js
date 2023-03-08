@@ -1,5 +1,5 @@
-const playerWinCount = 0;
-const computerWinCount = 0;
+let playerWinCount = 0;
+let computerWinCount = 0;
 
 //function to grab a random element from an array of "rock", "paper", and "scissors"
 function getComputerChoice() {
@@ -15,10 +15,12 @@ function playRound(playerSelection, computerSelection) {
             if(computerSelection == "rock"){
                 result = "It's a tie";
             } else if(computerSelection == "paper")
-            {
+            {  
+                computerWinCount++;
                 result = "How can you lose to a computer?";
             } else if(computerSelection == "scissors")
             {
+                playerWinCount++;
                 result = "You won!";
             } else{
                 result = "somhow you broke the computer";
@@ -26,12 +28,14 @@ function playRound(playerSelection, computerSelection) {
             break;
         case "paper":
             if(computerSelection == "rock"){
+                playerWinCount++;
                 result = "You won!";
             } else if(computerSelection == "paper")
             {
                 result = "It's a tie";
             } else if(computerSelection == "scissors")
             {
+                computerWinCount++;
                 result = "How can you lose to a computer?";
             } else{
                 result = "somhow you broke the computer";
@@ -39,9 +43,11 @@ function playRound(playerSelection, computerSelection) {
             break;
         case "scissors":
         if(computerSelection == "rock"){
+            computerWinCount++;
             result = "How can you lose to a computer?";
         } else if(computerSelection == "paper")
         {
+            playerWinCount++;
             result = "You won!";
         } else if(computerSelection == "scissors")
         {
@@ -58,12 +64,18 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(){
-    const playerSelection ="scissors";
-    const computerSelection = getComputerChoice();
-    console.log("Player: " + playerSelection);
-    console.log("Computer: " + computerSelection);
-    console.log(playRound(playerSelection,computerSelection));
-    return "Game Over";
+    
+    playerWinCount = 0;
+    computerWinCount = 0;
+    for (let i = 0; i < 5; i++) {
+        const playerSelection ="scissors";
+        const computerSelection = getComputerChoice();
+        console.log("Player: " + playerSelection);
+        console.log("Computer: " + computerSelection);
+        console.log(playRound(playerSelection,computerSelection));
+    }
+
+    return "Game Over: " + playerWinCount + " to " + computerWinCount;
 }
 
 console.log(game());
