@@ -7,6 +7,11 @@ function getComputerChoice() {
     return randomElement[Math.floor(Math.random() * randomElement.length)];
 }
 
+//function to prompt and return the player choice
+function getPlayerChoice(){
+    return "rock";
+}
+
 //function to compare and declare the winner between the user and computer
 function playRound(playerSelection, computerSelection) {
     let result = "";
@@ -69,7 +74,7 @@ function game(){
     playerWinCount = 0;
     computerWinCount = 0;
     for (let i = 0; i < 5; i++) {
-        const playerSelection ="scissors";
+        const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
         console.log("Player: " + playerSelection);
         console.log("Computer: " + computerSelection);
