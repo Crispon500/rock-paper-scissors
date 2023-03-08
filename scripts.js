@@ -83,5 +83,3 @@ function game(){
 
     return "Game Over: " + playerWinCount + " to " + computerWinCount;
 }
-
-console.log(game());
