@@ -60,6 +60,8 @@ function playRound(playerSelection, computerSelection) {
 function game(){
     const playerSelection ="scissors";
     const computerSelection = getComputerChoice();
+    console.log("Player: " + playerSelection);
+    console.log("Computer: " + computerSelection);
     console.log(playRound(playerSelection,computerSelection));
     return "Game Over";
 }
