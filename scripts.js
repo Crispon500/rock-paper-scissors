@@ -14,6 +14,25 @@ function getComputerChoice() {
     return randomElement[Math.floor(Math.random() * randomElement.length)];
 }
 
+//function to check the status of the game
+function checkStatus() {
+    if(playerWinCount === 5){
+        resetScore();
+        return true;
+    }
+    else if(computerWinCount === 5){
+        resetScore();
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+function resetScore(){
+    playerWinCount = 0;
+    computerWinCount = 0;
+}
+
 //function to compare and declare the winner between the user and computer
 function playRound(playerSelection, computerSelection) {
     let result = "";
@@ -67,7 +86,8 @@ function playRound(playerSelection, computerSelection) {
             result = "Insert a valid option";
             break;
     }
-    document.getElementById("player-score").innerText = playerWinCount;
-    document.getElementById("computer-score").innerText = computerWinCount;
+    checkStatus();
+    document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
+    document.getElementById("computer-score").innerText = "Computer: " +computerWinCount;
     return alert(result);
 }
