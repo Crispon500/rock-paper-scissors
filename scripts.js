@@ -14,11 +14,6 @@ function getComputerChoice() {
     return randomElement[Math.floor(Math.random() * randomElement.length)];
 }
 
-//function to prompt and return the player choice
-function getPlayerChoice(){
-    return prompt("Please type rock, paper, or scissors");
-}
-
 //function to compare and declare the winner between the user and computer
 function playRound(playerSelection, computerSelection) {
     let result = "";
