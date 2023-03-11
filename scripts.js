@@ -72,6 +72,7 @@ function playRound(playerSelection, computerSelection) {
             result = "Insert a valid option";
             break;
     }
-    document.getElementById("score").innerText =playerWinCount;
+    document.getElementById("player-score").innerText = playerWinCount;
+    document.getElementById("computer-score").innerText = computerWinCount;
     return alert(result);
 }
