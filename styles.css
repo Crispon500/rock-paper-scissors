@@ -24,9 +24,12 @@ h1{
     gap: 1rem;
 }
 
-.announcement-board{
+#announcement-board{
     height:15%;
     width:15%;
     background-color: bisque;
     text-align: center;
+    line-height: 50px;
+    padding:auto;
+    border: dotted black;
 }
