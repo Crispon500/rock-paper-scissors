@@ -17,10 +17,14 @@ function getComputerChoice() {
 //function to check the status of the game
 function checkStatus() {
     if(playerWinCount === 5){
+        document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
+        alert("You won the war")
         resetScore();
         return true;
     }
     else if(computerWinCount === 5){
+        document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
+        alert("Why do you suck so much.")
         resetScore();
         return true;
     }
@@ -86,8 +90,8 @@ function playRound(playerSelection, computerSelection) {
             result = "Insert a valid option";
             break;
     }
+    alert(result);
     checkStatus();
     document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
-    document.getElementById("computer-score").innerText = "Computer: " +computerWinCount;
-    return alert(result);
+    document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
 }
