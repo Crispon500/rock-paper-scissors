@@ -1,5 +1,11 @@
 let playerWinCount = 0;
 let computerWinCount = 0;
+const castRock = document.querySelector('#rock');
+castRock.onclick = () => playRound("rock",getComputerChoice());
+const castPaper = document.querySelector("#paper");
+castPaper.onclick = () => playRound("paper",getComputerChoice());
+const castScissors = document.querySelector("#scissors")
+castScissors.onclick = () => playRound("scissors",getComputerChoice());
 
 //function to grab a random element from an array of "rock", "paper", and "scissors"
 function getComputerChoice() {
@@ -65,21 +71,5 @@ function playRound(playerSelection, computerSelection) {
             result = "Insert a valid option";
             break;
     }
-    return result;
-}
-
-//initiate the game
-function game(){
-    
-    playerWinCount = 0;
-    computerWinCount = 0;
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        console.log("Player: " + playerSelection);
-        console.log("Computer: " + computerSelection);
-        console.log(playRound(playerSelection,computerSelection));
-    }
-
-    return "Game Over: " + playerWinCount + " to " + computerWinCount;
+    return alert(result);
 }
