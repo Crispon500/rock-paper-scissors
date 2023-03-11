@@ -1,5 +1,6 @@
 let playerWinCount = 0;
 let computerWinCount = 0;
+
 const castRock = document.querySelector('#rock');
 castRock.onclick = () => playRound("rock",getComputerChoice());
 const castPaper = document.querySelector("#paper");
@@ -71,5 +72,6 @@ function playRound(playerSelection, computerSelection) {
             result = "Insert a valid option";
             break;
     }
+    document.getElementById("score").innerText =playerWinCount;
     return alert(result);
 }
