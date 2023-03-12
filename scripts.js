@@ -29,14 +29,14 @@ function getComputerChoice() {
 //function to check the status of the game
 function checkStatus() {
     if(playerWinCount === 5){
-        document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
+        updateScoreBoard()
         removeCastButtons();
         updateAnnouncementBoard("You won the game!!!");
     }
     else if(computerWinCount === 5){
-        document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
+        updateScoreBoard();
         removeCastButtons();
-        updateAnnouncementBoard("Why do you suck so much. Looks like you lost for good.");
+        updateAnnouncementBoard("The computer wins. As expected.");
     }
 }
 //this is to remove the Rock Paper Scissors buttons when the game is over and also adds the reset button
@@ -48,15 +48,23 @@ function removeCastButtons(){
     
 }
 
+//function to reset the game
 function resetGame(){
     playerWinCount = 0;
     computerWinCount = 0;
-    document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
-    document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
+    updateScoreBoard();
+    
 }
 
+//updates the announcement board text
 function updateAnnouncementBoard(text){
     document.getElementById("announcement-board").innerText = text;
+}
+
+//updates the scoreboard for computer and player
+function updateScoreBoard() {
+    document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
+    document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
 }
 
 //function to compare and declare the winner between the user and computer
