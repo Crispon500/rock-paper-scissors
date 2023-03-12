@@ -10,12 +10,12 @@ const castScissors = document.querySelector("#scissors")
 castScissors.onclick = () => playRound("scissors",getComputerChoice());
 
 //used for placing the reset button
-const buttonContainer = document.getElementById("button-container");
+const buttonContainer = document.querySelector("#button-container");
 
 //create a reset button
 const resetButton = document.createElement("button");
 resetButton.innerText = "Reset";
-
+resetButton.id = "reset;"
 
 //function to grab a random element from an array of "rock", "paper", and "scissors"
 function getComputerChoice() {
