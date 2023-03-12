@@ -21,7 +21,7 @@ const buttonContainer = document.querySelector("#button-container");
 //function to grab a random element from an array of "rock", "paper", and "scissors"
 function getComputerChoice() {
     const randomElement = ["rock","paper","scissors"];
-    return randomElement[Math.floor(Math.random() * randomElement.length)];
+    return randomElement[Math.floor(Math.random() * 100)%randomElement.length];
 }
 
 //function to check the status of the game
