@@ -1,6 +1,11 @@
 let playerWinCount = 0;
 let computerWinCount = 0;
 
+//create a reset button
+const resetButton = document.createElement("button");
+resetButton.innerText = "Reset";
+resetButton.id = "reset";
+
 //create actions for the button choices
 const castRock = document.querySelector('#rock');
 castRock.onclick = () => playRound("rock",getComputerChoice());
@@ -8,14 +13,12 @@ const castPaper = document.querySelector("#paper");
 castPaper.onclick = () => playRound("paper",getComputerChoice());
 const castScissors = document.querySelector("#scissors")
 castScissors.onclick = () => playRound("scissors",getComputerChoice());
+resetButton.onclick = () => resetGame();
 
 //used for placing the reset button
 const buttonContainer = document.querySelector("#button-container");
 
-//create a reset button
-const resetButton = document.createElement("button");
-resetButton.innerText = "Reset";
-resetButton.id = "reset;"
+
 
 //function to grab a random element from an array of "rock", "paper", and "scissors"
 function getComputerChoice() {
@@ -48,6 +51,8 @@ function removeCastButtons(){
 function resetGame(){
     playerWinCount = 0;
     computerWinCount = 0;
+    document.getElementById("computer-score").innerText = "Computer: " + computerWinCount;
+    document.getElementById("player-score").innerText = "Player: "+ playerWinCount;
 }
 
 function updateAnnouncementBoard(text){
