@@ -28,24 +28,25 @@ function getComputerChoice() {
 function checkStatus() {
     if(playerWinCount === 5){
         updateScoreBoard()
-        removeCastButtons();
+        endGameButtonState();
         updateAnnouncementBoard("You won the game!!!");
     }
     else if(computerWinCount === 5){
         updateScoreBoard();
-        removeCastButtons();
+        endGameButtonState();
         updateAnnouncementBoard("The computer wins. As expected.");
     }
 }
 //this is to remove the Rock Paper Scissors buttons when the game is over and also adds the reset button
-function removeCastButtons(){
+function endGameButtonState(){
     document.getElementById("rock").remove();
     document.getElementById("paper").remove();
     document.getElementById("scissors").remove();
     buttonContainer.append(resetButton);
 }
 
-function addCastButtons(){
+//resets the buttons the start state for the game
+function startGameButtonState(){
     buttonContainer.append(castRock)
     buttonContainer.append(castPaper)
     buttonContainer.append(castScissors)
@@ -57,7 +58,7 @@ function resetGame(){
     playerWinCount = 0;
     computerWinCount = 0;
     updateScoreBoard();
-    addCastButtons();
+    startGameButtonState();
 }
 
 //updates the announcement board text
